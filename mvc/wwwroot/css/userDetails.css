@@ -1,0 +1,559 @@
+
+.nav-tabs-patient {
+    display: flex;
+    gap: 1rem;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
+}
+  .flex-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0   1rem   ;
+  }
+  .nav-link-patient {
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    color: #666;
+    border: 2px solid transparent;
+    background: none !important;
+    border-radius: 0px;
+  }
+  .nav-link-patient.active {
+    color: #0b3e91;
+    border-bottom-color: #0b3e91;
+    font-weight: 600;
+  }
+  .tab-content>.tab-pane {
+    display: none; /* Gizli */
+    background: none;
+  }
+  .tab-content>.tab-pane.active {
+    display: block;
+  }
+  .avatar-circle {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #29af77;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+   /* ======================================================
+       Mevcut Tasarım Kodları (hasta sayfası)
+       ====================================================== */
+
+       .rowSection {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        }
+    
+        .col-8 {
+        flex: 0 0 calc(66.666% - 1rem);
+        }
+    
+        .col-4 {
+        flex: 0 0 calc(33.333% - 1rem);
+        }
+    
+        .col-6 {
+        flex: 0 0 calc(50% - 1rem);
+        }
+    
+        .col-12 {
+        flex: 0 0 100%;
+        }
+    
+        @media (max-width: 768px) {
+    
+        .col-8,
+        .col-4,
+        .col-6 {
+          flex: 0 0 100%;
+        }
+        
+        }
+        @media (max-width: 1545px) {
+          .rowSection{
+            display:block;
+          }
+          #tabcontainer{
+            width: 100%;
+          }
+        }
+     
+      
+    
+        .monitoring-card {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 2rem;
+        margin-bottom: 1rem;
+        }
+    
+        .monitoring-header {
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        }
+    
+        .monitoring-title-section {
+        display: flex;
+        }
+    
+        .monitoring-title {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+        }
+    
+        .status-badge {
+        background-color: #ffdce5;
+        /* Pembe */
+        color: #333;
+        border-radius: 12px;
+        padding: 3px 10px;
+        font-size: 0.8rem;
+        margin-left: 10px;
+        }
+    
+        .approve-btn {
+        background-color: #0b3e91;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        margin-right: 10px;
+        cursor: pointer;
+        }
+    
+        .approve-btn i {
+        margin-right: 4px;
+        }
+    
+        .more-menu {
+        font-size: 1.2rem;
+        cursor: pointer;
+        }
+    
+        .monitoring-info-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-bottom: 1rem;
+        }
+    
+        .monitoring-info-block {
+        min-width: 120px;
+        flex: 1;
+        }
+    
+        .doctor-avatar {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        }
+    
+        .monitoring-comments {
+        background-color: #fcfcfc;
+        border: 1px solid #eee;
+        border-radius: 6px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        color: #555;
+        }
+    
+        .measurement-title {
+        font-weight: 600;
+        margin-bottom: 0.8rem;
+        }
+    
+        .measurement-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        }
+    
+        .measurement-card {
+        flex: 1 1 200px;
+        background-color: #fefefe;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 1rem;
+        min-width: 350px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+        }
+    
+        .measurement-card h6 {
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+        }
+    
+        .appointment-card {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        padding: 1rem;
+        margin-bottom: 1rem;
+        }
+    
+        .appointment-card h6 {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        }
+    
+        .complete-task-btn {
+        background-color: #0b3e91;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 8px 12px;
+        cursor: pointer;
+        }
+    
+        .open-tasks {
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        color: #888;
+        }
+    
+        .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        }
+    
+        .modal.show {
+        display: flex;
+        }
+    
+        .modal-dialog {
+        background-color: #fff;
+        border-radius: 6px;
+        width: 500px;
+        max-width: 90%;
+        padding: 1rem;
+        pointer-events: auto;
+        }
+    
+        .modal-header {
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+    
+        .modal-title {
+        font-size: 1.2rem;
+        margin: 0;
+        }
+    
+        .modal-body {
+        max-height: 100%;
+        overflow-y: auto;
+        margin-bottom: 1rem;
+        }
+    
+        .modal-footer {
+        text-align: right;
+        }
+    
+        .btn {
+        display: inline-block;
+        padding: 6px 12px;
+        background-color: #0b3e91;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        text-decoration: none;
+        }
+    
+        .btn:hover {
+        background-color: #082c64;
+        }
+    
+        .btn-secondary {
+        background-color: #6c757d;
+        }
+    
+        .btn-secondary:hover {
+        background-color: #565e64;
+        }
+    
+        .btn-primary {
+        background-color: #0b3e91;
+        }
+    
+        .btn-primary:hover {
+        background-color: #082c64;
+        }
+    
+        .btn-add {
+        padding: 16px 25px 16px 25px;
+        border-radius: 2rem;
+        }
+    
+        .form-control {
+        width: 100%;
+        max-width: 400px;
+        border: 1px solid #ddd;
+        margin-bottom: 1rem;
+        padding: 6px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        }
+    
+        label {
+        font-weight: 600;
+        margin: 0.5rem 0 0.2rem;
+        display: inline-block;
+        }
+    
+        .addMonitoringPlan {
+        background-color: white;
+        border-radius: 1rem;
+        padding: 3rem 1rem 3rem 2rem;
+        margin-bottom: 5rem;
+        }
+    
+        .addMonitoringPlan h4 {
+        color: #0b3e91;
+        }
+    
+        .addMonitoringPlan p {
+        margin-top: 2rem;
+        color: #0b3e91;
+        font-size: 1rem;
+        }
+    
+        .monitoring-comments p {
+        color: #0b3e91;
+        }
+    
+        #no-monitoring-plan {
+        display: none;
+        }
+    
+        /* ======================================================
+           Multi-Bar (min, low, high, max) Stil Kodları
+           ====================================================== */
+        .multi-bar {
+        position: relative;
+        width: 100%;
+        height: 16px;
+        background: #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 7px;
+        }
+    
+        .segment {
+        height: 100%;
+        float: left;
+        }
+    
+        .segment-red {
+        background-color: #f07a84;
+        /* Kırmızı */
+        }
+    
+        .segment-orange {
+        background-color: #ffc700;
+        /* Turuncu */
+        }
+    
+        .segment-green {
+        background-color: #cff7da;
+        /* Yeşil */
+        }
+    
+        .boundary-labels {
+        position: relative;
+        height: 40px;
+        /* İki satır etiket için yeterli yükseklik */
+        }
+    
+        .boundary-label {
+        position: absolute;
+        transform: translateX(-50%);
+        background: #fff;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        pointer-events: none;
+        text-align: center;
+        }
+    
+        /* ======================================================
+           TASK CARD STYLES (dosing plan => task görünümü)
+           ====================================================== */
+        .task-card {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 2rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+    
+        .task-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        }
+    
+        .task-title-section {
+        display: flex;
+        align-items: center;
+        }
+    
+        .task-title {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+        }
+    
+        .task-status-badge {
+        background-color: #ffdce5;
+        /* Varsayılan pembe */
+        color: #333;
+        border-radius: 12px;
+        padding: 3px 10px;
+        font-size: 0.8rem;
+        margin-left: 10px;
+        }
+    
+        .task-status-badge.Active {
+        background-color: #b3ffcc;
+        /* Aktif => yeşile yakın */
+        }
+    
+        .task-status-badge.Completed {
+        background-color: #e2e2e2;
+        /* Tamamlanmış => gri */
+        }
+    
+        .task-status-badge.Cancelled {
+        background-color: red;
+        /* Tamamlanmış => gri */
+        }
+    
+        .task-status-badge.Disabled {
+        background-color: #e2e2e2;
+        /* Tamamlanmış => gri */
+        }
+    
+        .task-more-menu {
+        font-size: 1.2rem;
+        cursor: pointer;
+        }
+    
+        .task-action-btn {
+        background-color: #0b3e91;
+        color: #fff;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        margin-right: 10px;
+        cursor: pointer;
+        }
+    
+        .task-action-btn i {
+        margin-right: 4px;
+        }
+    
+        .task-info-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-bottom: 1rem;
+        }
+    
+        .task-info-block {
+        min-width: 120px;
+        flex: 1;
+        font-size: 0.9rem;
+        }
+    
+        .task-comments {
+        background-color: #fcfcfc;
+        border: 1px solid #eee;
+        border-radius: 6px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        color: #555;
+        }
+    
+        .form-control-floating:focus+.floating-label,
+        .form-control-floating:not(:placeholder-shown)+.floating-label {
+        top: 0;
+        transform: translateY(20%) scale(0.85);
+        color: #023e7d;
+        }
+    
+        .patient-badge {
+        display: block;
+        padding: 8px 15px;
+        border-radius: 8px;
+        font-weight: bold;
+        text-align: center;
+        min-width: 100px;
+        border: 2px solid transparent;
+        transition: all 0.3s ease-in-out;
+        height: max-content;
+        }
+    
+        
+    
+        /* Active (Yeşil) */
+        .patient-badge.active {
+        background-color: #e0a800;
+        /* Yeşil */
+        color: white;
+        border-color: #e0a800;
+        }
+    
+        /* Registered (Sarı) */
+        .patient-badge.registered {
+        background-color: #28a745;
+        /* Sarı */
+        color: black;
+        border-color: #218838;
+        }
+
+
+        /* Registered (gri) */
+        .patient-badge.deleted {
+          background-color: #5a5a5a;
+          /* Sarı */
+          color: rgb(210, 210, 210);
+          border-color: #5a5a5a;
+          }
+    
+        /* Inactive (Kırmızı) */
+        .patient-badge.inactive {
+        background-color: #dc3545;
+        /* Kırmızı */
+        color: white;
+        border-color: #c82333;
+        }

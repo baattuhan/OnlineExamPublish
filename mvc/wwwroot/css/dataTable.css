@@ -1,0 +1,256 @@
+/***************************************************
+ * GENEL BUTON STİLLERİ
+ ***************************************************/
+ .btnBlue,
+ .btnGreen,
+ .btnPurple,
+ .btnOrange {
+   display: inline-block;
+   padding: 10px 16px;
+   border: none;
+   border-radius: 20px;
+   color: #fff;
+   font-size: 14px;
+   cursor: pointer;
+   outline: none;
+   text-decoration: none;
+   transition: background-color 0.2s ease-in-out;
+   box-sizing: border-box;
+ }
+ 
+ /* Mavi buton */
+ .btnBlue {
+   background-color: #023e7d;
+ }
+ .btnBlue:hover {
+   background-color: #02294f;
+ }
+ .btnPurple{
+  background-color:    #8700c8;
+ }
+ .btnOrange{
+  background-color:   #fe4f01;
+ }
+ /* Yeşil buton */
+ .btnGreen {
+   background-color: #1e8f56;
+ }
+ .btnGreen:hover {
+   background-color: #2b8553;
+ }
+ 
+ /***************************************************
+  * TABLO KAPSAYICI (RESPONSIVE İÇİN)
+  ***************************************************/
+ .table-responsive {
+   width: 100%;
+   overflow-x: auto; /* Masaüstü için gerekirse yatay scroll */
+   margin-top: 15px;
+ }
+ 
+ /***************************************************
+  * TABLO STİLLERİ (MASAÜSTÜ)
+  ***************************************************/
+ table.my-table {
+   width: 100%;
+   border-collapse: collapse;
+   background-color: #fff;
+   box-shadow: 0 0 10px rgba(0,0,0,0.08);
+   border-radius: 8px;
+   overflow: hidden;
+   box-sizing: border-box;
+ }
+ 
+ table.my-table thead tr {
+   background-color: #f2f2f2;
+ }
+ 
+ table.my-table th,
+ table.my-table td {
+   padding: 24px 12px 12px 12px;
+   border-bottom: 1px solid #eee;
+   text-align: left;
+   font-size: 12px;
+ }
+ 
+ table.my-table thead th.sortable {
+   cursor: pointer;
+ }
+ 
+ /* Sıralama ikonu */
+ .sort-indicator {
+   margin-left: 5px;
+   font-size: 0.8rem;
+   opacity: 0.6;
+ }
+ 
+ /***************************************************
+  * SAYFALAMA (PAGINATION)
+  ***************************************************/
+ .pagination-container {
+   margin-top: 10px;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   gap: 4px;
+   flex-wrap: wrap; /* Dar ekranda alt satıra geçebilir */
+ }
+ .pagination-button {
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   background-color: #f8f8f8;
+   padding: 6px 10px;
+   cursor: pointer;
+   font-size: 14px;
+   box-sizing: border-box;
+   transition: background-color 0.2s ease-in-out;
+ }
+ .pagination-button:hover {
+   background-color: #ddd;
+ }
+ .pagination-button.active {
+   background-color: #023e7d;
+   color: #fff;
+   border-color: #023e7d;
+ }
+ 
+ /***************************************************
+  * AVATAR DAİRESİ
+  ***************************************************/
+ .avatar-circle {
+   display: inline-block;
+   width: 32px;
+   height: 32px;
+   line-height: 32px;
+   border-radius: 50%;
+   text-align: center;
+   color: #fff;
+   font-weight: bold;
+   margin-right: 6px;
+   background-color: #777; 
+   flex-shrink: 0;
+ }
+ 
+ /***************************************************
+  * ÜST KISIM (HEADER) DÜZENİ
+  ***************************************************/
+ .header-row {
+   display: flex;
+   flex-wrap: wrap;
+   margin-bottom: 10px;
+   align-items: center;
+   justify-content: space-between;
+   gap: 10px;
+ }
+ .header-row > * {
+   margin: 0;
+ }
+ 
+ /* Sağ tarafa yaslama */
+ .flright {
+   float: right;
+ }
+ 
+ /***************************************************
+  * SAYFA İÇİ KAPSAYICI
+  ***************************************************/
+ 
+ 
+ /***************************************************
+  * MOBİL/TABLET UYUMLU - TABLE TO CARD
+  * max-width değerini dilediğiniz gibi ayarlayabilirsiniz
+  ***************************************************/
+  @media (max-width: 1200px) {
+    /* Tablonun header'ını gizleyelim */
+    .my-table thead {
+      display: none;
+    }
+    
+    /* Table, tbody, tr, td hepsini block yaparak kart görünümüne taşıyoruz */
+    .my-table,
+    .my-table tbody,
+    .my-table tr,
+    .my-table td {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    /* Her satır (tr) artık bir kart alanı */
+    .my-table tr {
+      margin-bottom: 1rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+      overflow: hidden;
+      position: relative;
+      padding: 10px;
+      width: 100%;
+      justify-content: space-between;
+    }
+    
+    /* Kart içindeki hücreler (td) dikeyde sıralanır */
+    .my-table td {
+      display: flex;
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+      position: relative; /* data-label için */
+      min-width: 100px;
+    }
+    /* Son hücrede alt kenarlığı kaldıralım */
+    .my-table tr td:last-child {
+      border-bottom: none;
+    }
+  
+    /*
+     * data-label ile her hücrenin başlığını gösteriyoruz.
+     * content: attr(data-label) -> Hücrenin "data-label" attribute değerini okur.
+     * NOT: HTML tarafında <td data-label="Name"> gibi eklemeniz lazım.
+     */
+    .my-table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      margin-right: 6px;
+      min-width: 99px; /* Sütun başlıklarının kaplayacağı alan */
+      color: #333;
+      position: absolute;
+      top: 0;
+    }
+  }
+  
+
+ @media (max-width: 992px) {
+   /* Tablonun header'ını gizleyelim */
+   
+   
+   /* Table, tbody, tr, td hepsini block yaparak kart görünümüne taşıyoruz */
+   .my-table,
+   .my-table tbody,
+   .my-table tr 
+     {
+     width: 100%;
+   }
+  
+ }
+ 
+ /***************************************************
+  * DAHA DAR EKRANLAR (ÖRNEK: max-width: 576px)
+  * İsterseniz kartları daha da optimize edebilirsiniz
+  ***************************************************/
+ @media (max-width: 576px) {
+   .my-table tr {
+     margin-bottom: 1rem;
+     padding: 8px;
+     justify-content:  unset;
+
+   }
+   .my-table td {
+     padding: 6px 0;
+   }
+ 
+  .header-row{
+    margin-top: 15px;
+  }
+ }
+ 

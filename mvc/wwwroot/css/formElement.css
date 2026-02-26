@@ -1,0 +1,94 @@
+  
+  
+  .card {
+    background-color: #fff;
+    border: none;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    padding: 24px;
+  }
+  .card h3 {
+    font-size: 18px;
+    color: #023e7d;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+  h2,h3 {
+    color: #023e7d;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  /* Floating label wrapper */
+  .form-group {
+    position: relative;
+    margin-bottom: 24px;
+  }
+  /* Floating label fields */
+  .form-control-floating {
+  width: 100%;
+  padding: 29px 12px 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  height: 77px;
+  font-size: 17px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  outline: none;
+}
+  .form-control-floating:focus {
+    border-color: #023e7d;
+  }
+  /* Hide default placeholder text so label can float */
+  .form-control-floating::placeholder {
+    color: transparent;
+  }
+  /* The label that floats up */
+  .floating-label {
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    transform: translateY(-50%);
+    color: #999;
+    background: #fff;
+    padding: 0 4px;
+    pointer-events: none;
+    transition: 0.2s ease all;
+  }
+  /* When input is focused or not empty, raise the label */
+  .form-control-floating:focus + .floating-label,
+  .form-control-floating:not(:placeholder-shown) + .floating-label {
+    top: 0;
+    transform: translateY(33%) scale(0.85);
+    color: #023e7d;
+  }
+
+  /* Buttons */
+  .btn {
+    border-radius: 24px;
+    padding: 10px 24px;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+  }
+  .btn.btn-primary {
+    background-color: #023e7d;
+    color: #fff;
+  }
+  .btn.btn-primary:hover {
+    background-color: #02294f;
+  }
+  .btn.btn-secondary {
+    background-color: #ccc;
+    color: #333;
+  }
+  .btn.btn-secondary:hover {
+    background-color: #bbb;
+  }
+  .form-check-input:checked {
+      
+    background-color: #023e7d;
+    border-color: #023e7d;
+  }
+  .form-check{
+      width: 140px;
+  }

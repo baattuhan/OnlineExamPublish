@@ -1,0 +1,325 @@
+* {
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box;
+}
+@font-face {
+    font-family: "Poppins ExtraBold";
+    src: url("../fonts/Poppins-SemiBold.ttf") format("truetype");
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Poppins Medium";
+    src: url("../fonts/Poppins-Medium.ttf") format("truetype");
+    font-style: normal;
+  }
+body { 
+  display: flex;
+  background-color:#faf3fd;  
+  font-family: "Poppins Medium";
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #2671dd;
+  border-radius: 1rem;
+
+}
+body::-webkit-scrollbar-track {
+   background: linear-gradient(to bottom, #a1c0ed, #fffbd5); 
+   border-radius: 1.5rem;
+}
+.container-fluid-sidebar {
+    padding: 4rem 2rem 2rem 3rem;
+  width: 100%;
+
+}
+
+.containerSideBar {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  min-height: 100vh;
+}
+ul{
+padding-left:unset!important;
+}
+/* SIDEBAR GENEL */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 110px;             /* Dar genişlik */
+  background-color: #fff;  /* Menü arka planı */
+  transition: width 0.3s ease;
+  overflow: visible;       /* Hamburger butonunun dışa taşması için */
+  z-index: 100;
+}
+
+/* Main content sidebar genişliği kadar sola margin */
+.container-fluid-sidebar {
+  margin-left: 110px;
+}
+
+/* Sidebar içerik alanı scroll için */
+.sidebar > div:first-child {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar.open {
+  width: 313px;
+}
+
+.sidebar.open ~ .container-fluid-sidebar,
+.sidebar.open + main {
+  margin-left: 313px;
+}
+
+/* HAMBURGER BUTONU */
+.toggle-btn {
+  position: absolute;
+  top: 20px;        
+  right: -20px;     /* Sağ kenarın biraz dışına çıksın diye -20px */
+  z-index: 9999;    /* Üstte görünebilmesi için yüksek z-index */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffff; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.toggle-btn:hover {
+    background-color: #f1f1f1;
+  }
+/* Üç çizgi */
+.toggle-btn .bar {
+  position: relative;
+  width: 20px;
+  height: 2px;
+  background-color: #333; /* Siyah çizgi */
+  transition: 0.2s;
+}
+.container-section {
+  background-color: #fff;
+  border-radius: 1.2rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+.toggle-btn .bar::before,
+.toggle-btn .bar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background-color: #333;
+  transition: 0.2s;
+}
+.toggle-btn .bar::before {
+  top: -6px;
+}
+.toggle-btn .bar::after {
+  top: 6px;
+}
+
+/* LOGO & HEADER */
+.sidebar-header {
+  display: flex;
+  padding: 0 55px 0;
+  justify-content: space-between;
+}
+.logo-circle {
+  width: 100%;
+  border-radius: 50%;
+  display: block;
+  transition: 0.3s;
+  object-fit: cover;
+}
+ 
+
+/* MENÜ (UL) */
+.menu {
+  margin-top: 1rem;
+  list-style: none;
+}
+ 
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 0.8rem 1rem 2.7rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  position: relative;
+}
+.menu-item  a{
+  padding: 0.8rem 1rem 1rem 2.5rem;
+   color:#fe4f01;
+   text-decoration: none;
+   display: flex;
+   width: 100%;
+}
+.paddingForMenuItem{
+  padding: 0.8rem 1rem 1rem 2.5rem;
+
+}
+
+.menu-item:hover {
+    background-color: #f8f4ee;
+  }
+.menu-item i {
+  font-size: 1.2rem;
+  width: 24px; /* simge alanı */
+  text-align: center;
+  margin-right: 0.3rem;
+  color: #fe4f01;
+
+}
+.menu-text {
+  display: none;
+  white-space: nowrap;
+  transition: display 0.3s, margin-left 0.3s;
+  margin-left: 0;
+}
+.sidebar.open .menu-text {
+  display: block;
+  margin-left: 8px;
+  color: var(--text-muted);
+}
+.active {
+  border-radius: 6px;
+}
+/* SUBMENU (ACCORDION) */
+.has-submenu .arrow {
+  margin-left: auto; 
+  font-size: 0.8rem;
+  transform: rotate(0deg);
+  transition: transform 0.3s;
+  display: none; /* Başta sidebar kapalıyken gizleyelim */
+}
+.sidebar.open .has-submenu .arrow {
+  display: inline-block; /* Menü açılınca gözüksün */
+}
+.submenu {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  margin-left: 2.5rem; /* İçeriden başlasın */
+  border-left: 1px dashed #ccc;
+}
+.submenu.open {
+  height: auto; 
+}
+.submenu li {
+  padding: 0.3rem 1rem;
+  font-size: 0.9rem;
+  color: #fe4f01;
+  cursor: pointer;
+}
+.submenu li:hover {
+  background-color: #f3f3f3;
+}
+.rotate {
+  transform: rotate(180deg);
+}
+h2{
+    margin:0;color:#002f75;
+    font-family: "Poppins ExtraBold";
+    font-size: calc(1.625rem + .9vw);
+}
+
+/* 1) Mobil Header Temel Stili */
+.mobile-header {
+  display: none; 
+  position: absolute;/* Varsayılan olarak kapalı, sadece dar ekranda açacağız */
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.mobile-header-logo img {
+  height: 45px; /* Örnek logo yüksekliği */
+  object-fit: cover;
+}
+
+.mobile-header-hamburger {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  opacity: 0;
+}
+.mobile-sidebar-close {
+  font-size: 1.5rem;
+  cursor: pointer;
+  text-align: right;
+  padding: 1rem;
+}
+
+/* 2) Mobil Sidebar (küçük ekranlarda tam ekran kaplayan) */
+@media (max-width: 768px) {
+  .mobile-header-hamburger{
+    opacity: 1;
+  }
+  /* Masaüstü için kullanılan .toggle-btn'yi sakla */
+  .toggle-btn {
+    display: none;
+  }
+
+  /* Mobil header'ı göster */
+  .mobile-header {
+    display: flex;
+  }
+  .container-section {
+    padding: 0.2rem;
+  }
+  /* Container yapısında mobilde layout ayarlaması */
+  .containerSideBar {
+    flex-direction: column; /* Sidebar üstte veya ekranda kapalı durumda */
+  }
+  
+  /* .sidebar genel özellikleri (mobilde overlay gibi olsun) */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Başlangıçta tamamen gizli */
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 9999;
+    overflow-y: auto; /* İçerik scrollbar alabilir */
+    transition: all 0.3s ease;
+  }
+
+  /* sidebar.open-mobile olduğunda ekranın tamamına gelsin */
+  .sidebar.open-mobile {
+    left: 0; 
+    width: 100%!important;
+  }
+
+  /* Logo vs. mobil görünümde isterseniz büyüklük ayarlayabilirsiniz */
+  .sidebar-header {
+    padding: 1rem;
+  }
+  .logo-circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  /* Menü itemları daha rahat görüntülemek için */
+  .menu-item a {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
+
+  /* İçerik (main) üst kısma yer açılsın diye marjin ekleyebilirsiniz. */
+  .container-fluid-sidebar {
+    padding: 0.2rem; 
+    margin-top: 60px; /* mobile-header kadar boşluk */
+  }
+}

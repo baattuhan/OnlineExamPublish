@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizgoroo - Online Exam & Learning Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="presentation">
+        <!-- Navigation -->
+        <nav class="slide-nav">
+            <button class="nav-btn prev" onclick="prevSlide()" title="Previous (Left Arrow)">&#8592;</button>
+            <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">12</span></span>
+            <button class="nav-btn next" onclick="nextSlide()" title="Next (Right Arrow)">&#8594;</button>
+            <button class="nav-btn print" onclick="window.print()" title="Print / Export PDF">&#128424;</button>
+        </nav>
+
+        <!-- Slide 1: Cover -->
+        <section class="slide active" id="slide-1">
+            <div class="slide-content cover">
+                <div class="logo-area">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 100 100" class="kangaroo-icon">
+                            <circle cx="50" cy="50" r="45" fill="#2b6cb0"/>
+                            <text x="50" y="65" text-anchor="middle" fill="white" font-size="40" font-weight="bold">Q</text>
+                        </svg>
+                    </div>
+                    <h1>Quizgoroo</h1>
+                </div>
+                <h2 class="main-title">Online Exam & Learning Management System</h2>
+                <p class="subtitle">Digital Transformation in Education</p>
+                <div class="cover-features">
+                    <span class="feature-badge">Online Exams</span>
+                    <span class="feature-badge">LMS</span>
+                    <span class="feature-badge">Analytics</span>
+                    <span class="feature-badge">Multi-language</span>
+                </div>
+                <div class="screenshot-container">
+                    <img src="screenshots/login.png" alt="Quizgoroo Login Page" class="screenshot-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 2: System Overview -->
+        <section class="slide" id="slide-2">
+            <div class="slide-content">
+                <h2 class="slide-title">System Overview</h2>
+                <div class="overview-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">User Roles</div>
+                        <div class="stat-detail">Admin, Teacher, Student</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Question Types</div>
+                        <div class="stat-detail">Interactive & Visual</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">23</div>
+                        <div class="stat-label">API Endpoints</div>
+                        <div class="stat-detail">RESTful Services</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Languages</div>
+                        <div class="stat-detail">Turkish & English</div>
+                    </div>
+                </div>
+                <div class="modules-overview">
+                    <h3>Core Modules</h3>
+                    <div class="module-list">
+                        <div class="module-item">
+                            <span class="module-icon">&#128221;</span>
+                            <span class="module-name">Exam Management</span>
+                        </div>
+                        <div class="module-item">
+                            <span class="module-icon">&#128218;</span>
+                            <span class="module-name">Course Management (LMS)</span>
+                        </div>
+                        <div class="module-item">
+                            <span class="module-icon">&#128100;</span>
+                            <span class="module-name">User Management</span>
+                        </div>
+                        <div class="module-item">
+                            <span class="module-icon">&#128200;</span>
+                            <span class="module-name">Analytics & Reporting</span>
+                        </div>
+                        <div class="module-item">
+                            <span class="module-icon">&#127979;</span>
+                            <span class="module-name">School Management</span>
+                        </div>
+                        <div class="module-item">
+                            <span class="module-icon">&#128274;</span>
+                            <span class="module-name">Security & Auth</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: User Roles & Permissions -->
+        <section class="slide" id="slide-3">
+            <div class="slide-content">
+                <h2 class="slide-title">User Roles & Permissions</h2>
+                <div class="roles-grid">
+                    <div class="role-card admin">
+                        <div class="role-header">
+                            <span class="role-icon">&#128119;</span>
+                            <h3>Administrator</h3>
+                        </div>
+                        <ul class="role-permissions">
+                            <li>Full system control</li>
+                            <li>User management (CRUD)</li>
+                            <li>Exam & question management</li>
+                            <li>Course & LMS management</li>
+                            <li>School management</li>
+                            <li>System analytics</li>
+                            <li>All reports access</li>
+                        </ul>
+                    </div>
+                    <div class="role-card teacher">
+                        <div class="role-header">
+                            <span class="role-icon">&#128105;&#8205;&#127979;</span>
+                            <h3>Teacher</h3>
+                        </div>
+                        <ul class="role-permissions">
+                            <li>Create & manage exams</li>
+                            <li>Create & manage courses</li>
+                            <li>Grade assignments</li>
+                            <li>View student progress</li>
+                            <li>Student reports</li>
+                            <li>Announcements</li>
+                            <li>Survey management</li>
+                        </ul>
+                    </div>
+                    <div class="role-card student">
+                        <div class="role-header">
+                            <span class="role-icon">&#128103;</span>
+                            <h3>Student</h3>
+                        </div>
+                        <ul class="role-permissions">
+                            <li>Take assigned exams</li>
+                            <li>View exam results</li>
+                            <li>Enroll in courses</li>
+                            <li>Access course content</li>
+                            <li>Submit assignments</li>
+                            <li>View progress</li>
+                            <li>Profile management</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="screenshot-container dual">
+                    <img src="screenshots/admin-dashboard-1.png" alt="Admin Dashboard" class="screenshot-image">
+                    <img src="screenshots/admin-dashboard-2.png" alt="Admin Dashboard View" class="screenshot-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Student Exam Flow -->
+        <section class="slide" id="slide-4">
+            <div class="slide-content">
+                <h2 class="slide-title">Student Flow - Taking an Exam</h2>
+                <div class="flow-diagram">
+                    <div class="flow-step">
+                        <div class="step-circle">1</div>
+                        <div class="step-content">
+                            <h4>Dashboard</h4>
+                            <p>View assigned exams</p>
+                        </div>
+                    </div>
+                    <div class="flow-arrow">&#8594;</div>
+                    <div class="flow-step shop">
+                        <div class="step-circle">2</div>
+                        <div class="step-content">
+                            <h4>Exam Shop &#128722;</h4>
+                            <p>Purchase an exam</p>
+                        </div>
+                    </div>
+                    <div class="flow-arrow">&#8594;</div>
+                    <div class="flow-step">
+                        <div class="step-circle">3</div>
+                        <div class="step-content">
+                            <h4>My Exams</h4>
+                            <p>Select an exam</p>
+                        </div>
+                    </div>
+                    <div class="flow-arrow">&#8594;</div>
+                    <div class="flow-step">
+                        <div class="step-circle">4</div>
+                        <div class="step-content">
+                            <h4>Exam Detail</h4>
+                            <p>View info & start</p>
+                        </div>
+                    </div>
+                    <div class="flow-arrow">&#8594;</div>
+                    <div class="flow-step">
+                        <div class="step-circle">5</div>
+                        <div class="step-content">
+                            <h4>Take Exam</h4>
+                            <p>Answer questions</p>
+                        </div>
+                    </div>
+                    <div class="flow-arrow">&#8594;</div>
+                    <div class="flow-step">
+                        <div class="step-circle">6</div>
+                        <div class="step-content">
+                            <h4>Finish</h4>
+                            <p>Submit answers</p>
+                        </div>
+                    </div>
+                    <div class="flow-arrow">&#8594;</div>
+                    <div class="flow-step">
+                        <div class="step-circle">7</div>
+                        <div class="step-content">
+                            <h4>Results</h4>
+                            <p>View score & analysis</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="features-row">
+                    <div class="feature-item">
+                        <span class="feature-icon">&#9201;</span>
+                        <span>Timer & Auto-submit</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">&#9202;</span>
+                        <span>Time Tracking</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">&#128190;</span>
+                        <span>Auto-save Answers</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">&#128274;</span>
+                        <span>Question Locking</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">&#128196;</span>
+                        <span>PDF Exam Support</span>
+                    </div>
+                </div>
+                <div class="screenshot-gallery sf-gallery">
+                    <img src="screenshots/student-dashboard.png" alt="Student Dashboard" class="gallery-image">
+                    <img src="screenshots/screen-1.png" alt="Screen 1" class="gallery-image">
+                    <img src="screenshots/screen-2.png" alt="Screen 2" class="gallery-image">
+                    <img src="screenshots/screen-3.png" alt="Screen 3" class="gallery-image">
+                    <img src="screenshots/screen-4.png" alt="Screen 4" class="gallery-image">
+                    <img src="screenshots/screen-5.png" alt="Screen 5" class="gallery-image">
+                    <img src="screenshots/screen-6.png" alt="Screen 6" class="gallery-image">
+                    <img src="screenshots/screen-7.png" alt="Screen 7" class="gallery-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Question Types -->
+        <section class="slide" id="slide-5">
+            <div class="slide-content">
+                <h2 class="slide-title">Question Types</h2>
+                <p class="slide-subtitle">12 Different Question Types for Diverse Assessment</p>
+                <div class="question-types-grid">
+                    <div class="qt-category">
+                        <h4 class="qt-category-title">Classic</h4>
+                        <div class="qt-list">
+                            <div class="qt-item">
+                                <span class="qt-icon">&#9898;</span>
+                                <span>Multiple Choice</span>
+                            </div>
+                            <div class="qt-item">
+                                <span class="qt-icon">&#9745;</span>
+                                <span>Multiple Select</span>
+                            </div>
+                            <div class="qt-item">
+                                <span class="qt-icon">&#10003;&#10007;</span>
+                                <span>True / False</span>
+                            </div>
+                            <div class="qt-item">
+                                <span class="qt-icon">&#95;&#95;&#95;</span>
+                                <span>Fill in the Blank</span>
+                            </div>
+                            <div class="qt-item">
+                                <span class="qt-icon">&#128221;</span>
+                                <span>Open-Ended</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="qt-category">
+                        <h4 class="qt-category-title">Interactive</h4>
+                        <div class="qt-list">
+                            <div class="qt-item">
+                                <span class="qt-icon">&#8596;</span>
+                                <span>Matching</span>
+                            </div>
+                            <div class="qt-item">
+                                <span class="qt-icon">&#8597;</span>
+                                <span>Ordering</span>
+                            </div>
+                            <div class="qt-item">
+                                <span class="qt-icon">&#128194;</span>
+                                <span>Grouping</span>
+                            </div>
+                            <div class="qt-item">
+                                <span class="qt-icon">&#128400;</span>
+                                <span>Drag & Drop</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="qt-category">
+                        <h4 class="qt-category-title">Visual & Pattern</h4>
+                        <div class="qt-list">
+                            <div class="qt-item">
+                                <span class="qt-icon">&#9632;&#9650;&#9679;</span>
+                                <span>Shape Pattern</span>
+                            </div>
+                            <div class="qt-item">
+                                <span class="qt-icon">1,2,3...</span>
+                                <span>Number Sequence</span>
+                            </div>
+                            <div class="qt-item">
+                                <span class="qt-icon">&#128196;</span>
+                                <span>PDF Exam</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="screenshot-gallery qt-gallery">
+                    <img src="screenshots/qt-1.png" alt="Question Type 1" class="gallery-image">
+                    <img src="screenshots/qt-2.png" alt="Question Type 2" class="gallery-image">
+                    <img src="screenshots/qt-3.png" alt="Question Type 3" class="gallery-image">
+                    <img src="screenshots/qt-4.png" alt="Question Type 4" class="gallery-image">
+                    <img src="screenshots/qt-5.png" alt="Question Type 5" class="gallery-image">
+                    <img src="screenshots/qt-6.png" alt="Question Type 6" class="gallery-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Exam Management -->
+        <section class="slide" id="slide-6">
+            <div class="slide-content">
+                <h2 class="slide-title">Exam Management</h2>
+                <p class="slide-subtitle">Comprehensive Tools for Admin & Teachers</p>
+                <div class="management-grid">
+                    <div class="mgmt-card">
+                        <h4>&#128221; Create Exams</h4>
+                        <ul>
+                            <li>Name, description, cover image</li>
+                            <li>Difficulty level settings</li>
+                            <li>Time limits (per exam/question)</li>
+                            <li>Passing score configuration</li>
+                            <li>Schedule start/end dates</li>
+                        </ul>
+                    </div>
+                    <div class="mgmt-card">
+                        <h4>&#128218; Question Pool</h4>
+                        <ul>
+                            <li>Centralized question bank</li>
+                            <li>Filter by topic/grade</li>
+                            <li>Bulk add questions</li>
+                            <li>Question reordering</li>
+                            <li>Question statistics</li>
+                        </ul>
+                    </div>
+                    <div class="mgmt-card">
+                        <h4>&#128200; Statistics</h4>
+                        <ul>
+                            <li>Exam attempt tracking</li>
+                            <li>Average scores</li>
+                            <li>Completion rates</li>
+                            <li>Per-question analysis</li>
+                            <li>Student performance</li>
+                        </ul>
+                    </div>
+                    <div class="mgmt-card">
+                        <h4>&#9881; Operations</h4>
+                        <ul>
+                            <li>Status management (Draft/Active)</li>
+                            <li>Clone existing exams</li>
+                            <li>Assign to students/schools</li>
+                            <li>Export results</li>
+                            <li>Manual evaluation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="screenshot-gallery em-gallery">
+                    <img src="screenshots/em-1.png" alt="Exam Management 1" class="gallery-image">
+                    <img src="screenshots/em-2.png" alt="Exam Management 2" class="gallery-image">
+                    <img src="screenshots/em-3.png" alt="Exam Management 3" class="gallery-image">
+                    <img src="screenshots/em-4.png" alt="Exam Management 4" class="gallery-image">
+                    <img src="screenshots/em-5.png" alt="Exam Management 5" class="gallery-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: LMS Course Management -->
+        <section class="slide" id="slide-7">
+            <div class="slide-content">
+                <h2 class="slide-title">LMS - Course Management</h2>
+                <p class="slide-subtitle">Complete Learning Management System</p>
+                <div class="lms-features">
+                    <div class="lms-feature-card">
+                        <div class="lms-icon">&#128218;</div>
+                        <h4>Course Creation</h4>
+                        <p>Create courses with cover images, descriptions, and categorization. Assign teachers and set education modes (Remote/In-Person/Hybrid).</p>
+                    </div>
+                    <div class="lms-feature-card">
+                        <div class="lms-icon">&#128194;</div>
+                        <h4>Content Sections</h4>
+                        <p>Organize courses into sections and sub-sections. Drag-and-drop reordering for flexible content structure.</p>
+                    </div>
+                    <div class="lms-feature-card">
+                        <div class="lms-icon">&#127909;</div>
+                        <h4>Resources</h4>
+                        <p>Upload videos, documents, and links. Track viewing progress and completion status per student.</p>
+                    </div>
+                    <div class="lms-feature-card">
+                        <div class="lms-icon">&#128101;</div>
+                        <h4>Enrollments</h4>
+                        <p>Individual or bulk enrollment. Track enrollment status and manage student access to courses.</p>
+                    </div>
+                </div>
+                <div class="screenshot-gallery lms-gallery">
+                    <img src="screenshots/lms-1.png" alt="LMS Course Management 1" class="gallery-image">
+                    <img src="screenshots/lms-2.png" alt="LMS Course Management 2" class="gallery-image">
+                    <img src="screenshots/lms-3.png" alt="LMS Course Management 3" class="gallery-image">
+                    <img src="screenshots/lms-4.png" alt="LMS Course Management 4" class="gallery-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: LMS Assignments & Announcements -->
+        <section class="slide" id="slide-8">
+            <div class="slide-content">
+                <h2 class="slide-title">LMS - Assignments & Announcements</h2>
+                <div class="lms-secondary-grid">
+                    <div class="lms-section">
+                        <h3>&#128203; Assignments</h3>
+                        <div class="feature-list">
+                            <div class="feature-row">
+                                <span class="check-icon">&#10003;</span>
+                                <span>Create assignments with deadlines</span>
+                            </div>
+                            <div class="feature-row">
+                                <span class="check-icon">&#10003;</span>
+                                <span>Accept file or text submissions</span>
+                            </div>
+                            <div class="feature-row">
+                                <span class="check-icon">&#10003;</span>
+                                <span>Grade submissions with feedback</span>
+                            </div>
+                            <div class="feature-row">
+                                <span class="check-icon">&#10003;</span>
+                                <span>Track submission status</span>
+                            </div>
+                            <div class="feature-row">
+                                <span class="check-icon">&#10003;</span>
+                                <span>Late submission handling</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lms-section">
+                        <h3>&#128227; Announcements</h3>
+                        <div class="feature-list">
+                            <div class="feature-row">
+                                <span class="check-icon">&#10003;</span>
+                                <span>Create course announcements</span>
+                            </div>
+                            <div class="feature-row">
+                                <span class="check-icon">&#10003;</span>
+                                <span>Schedule publication dates</span>
+                            </div>
+                            <div class="feature-row">
+                                <span class="check-icon">&#10003;</span>
+                                <span>Rich text content support</span>
+                            </div>
+                            <div class="feature-row">
+                                <span class="check-icon">&#10003;</span>
+                                <span>Draft/Published status</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lms-section">
+                        <h3>&#128202; Surveys</h3>
+                        <div class="feature-list">
+                            <div class="feature-row">
+                                <span class="check-icon">&#10003;</span>
+                                <span>Create course surveys</span>
+                            </div>
+                            <div class="feature-row">
+                                <span class="check-icon">&#10003;</span>
+                                <span>Multiple question types</span>
+                            </div>
+                            <div class="feature-row">
+                                <span class="check-icon">&#10003;</span>
+                                <span>Collect student feedback</span>
+                            </div>
+                            <div class="feature-row">
+                                <span class="check-icon">&#10003;</span>
+                                <span>View response analytics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="screenshot-gallery aa-gallery">
+                    <img src="screenshots/aa-1.png" alt="Assignments 1" class="gallery-image">
+                    <img src="screenshots/aa-2.png" alt="Assignments 2" class="gallery-image">
+                    <img src="screenshots/aa-3.png" alt="Assignments 3" class="gallery-image">
+                    <img src="screenshots/aa-4.png" alt="Announcements 1" class="gallery-image">
+                    <img src="screenshots/aa-5.png" alt="Announcements 2" class="gallery-image">
+                    <img src="screenshots/aa-6.png" alt="Surveys 1" class="gallery-image">
+                    <img src="screenshots/aa-7.png" alt="Surveys 2" class="gallery-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 9: Analytics & Reporting -->
+        <section class="slide" id="slide-9">
+            <div class="slide-content">
+                <h2 class="slide-title">Analytics & Reporting</h2>
+                <p class="slide-subtitle">Data-Driven Insights for Better Education</p>
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <h4>&#128100; Student Performance</h4>
+                        <ul>
+                            <li>Total exams taken</li>
+                            <li>Correct/Wrong/Empty answers</li>
+                            <li>Average response time</li>
+                            <li>Topic-wise performance</li>
+                            <li>Progress over time</li>
+                        </ul>
+                    </div>
+                    <div class="analytics-card">
+                        <h4>&#128218; Course Analytics</h4>
+                        <ul>
+                            <li>Enrollment statistics</li>
+                            <li>Completion rates</li>
+                            <li>Content consumption</li>
+                            <li>Assignment grades</li>
+                            <li>Daily active users</li>
+                        </ul>
+                    </div>
+                    <div class="analytics-card">
+                        <h4>&#128200; Progress Distribution</h4>
+                        <div class="progress-bars">
+                            <div class="progress-item">
+                                <span>Not Started (0%)</span>
+                                <div class="bar"><div class="fill" style="width: 15%"></div></div>
+                            </div>
+                            <div class="progress-item">
+                                <span>In Progress (1-75%)</span>
+                                <div class="bar"><div class="fill" style="width: 45%"></div></div>
+                            </div>
+                            <div class="progress-item">
+                                <span>Completed (100%)</span>
+                                <div class="bar"><div class="fill" style="width: 40%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="analytics-card">
+                        <h4>&#128229; Export Options</h4>
+                        <ul>
+                            <li>Export to CSV</li>
+                            <li>Export to PDF</li>
+                            <li>Custom date ranges</li>
+                            <li>Enrollment reports</li>
+                            <li>Progress reports</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="screenshot-gallery ar-gallery">
+                    <img src="screenshots/ar-1.png" alt="Analytics 1" class="gallery-image">
+                    <img src="screenshots/screen-5.png" alt="Analytics 2" class="gallery-image">
+                    <img src="screenshots/screen-6.png" alt="Analytics 3" class="gallery-image">
+                    <img src="screenshots/screen-7.png" alt="Analytics 4" class="gallery-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 10: Security & Authentication -->
+        <section class="slide" id="slide-10">
+            <div class="slide-content">
+                <h2 class="slide-title">Security & Authentication</h2>
+                <p class="slide-subtitle">Enterprise-Grade Security Features</p>
+                <div class="security-grid">
+                    <div class="security-item">
+                        <div class="security-icon">&#128272;</div>
+                        <h4>JWT Authentication</h4>
+                        <p>Token-based authentication with 2-hour expiration. Secure API access for all endpoints.</p>
+                    </div>
+                    <div class="security-item">
+                        <div class="security-icon">&#128101;</div>
+                        <h4>Role-Based Access (RBAC)</h4>
+                        <p>Three-tier permission system. Each role has specific access rights and restrictions.</p>
+                    </div>
+                    <div class="security-item">
+                        <div class="security-icon">&#127850;</div>
+                        <h4>Secure Cookies</h4>
+                        <p>HttpOnly, Secure, and SameSite=Strict cookies. Protection against XSS and CSRF attacks.</p>
+                    </div>
+                    <div class="security-item">
+                        <div class="security-icon">&#128274;</div>
+                        <h4>Password Security</h4>
+                        <p>Hashed password storage. Secure password reset flow via email.</p>
+                    </div>
+                    <div class="security-item">
+                        <div class="security-icon">&#127760;</div>
+                        <h4>Domain Restrictions</h4>
+                        <p>Domain-based access control. Custom restrictions for specific organizations.</p>
+                    </div>
+                    <div class="security-item">
+                        <div class="security-icon">&#9201;</div>
+                        <h4>Session Management</h4>
+                        <p>Automatic token expiry handling. Secure logout with cookie cleanup.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 11: Technology Stack -->
+        <section class="slide" id="slide-11">
+            <div class="slide-content">
+                <h2 class="slide-title">Technology Stack</h2>
+                <p class="slide-subtitle">Modern, Scalable Architecture</p>
+                <div class="tech-stack">
+                    <div class="tech-layer">
+                        <h4>Backend</h4>
+                        <div class="tech-items">
+                            <div class="tech-badge">.NET Core 9.0</div>
+                            <div class="tech-badge">ASP.NET MVC</div>
+                            <div class="tech-badge">Web API</div>
+                            <div class="tech-badge">Entity Framework</div>
+                        </div>
+                    </div>
+                    <div class="tech-layer">
+                        <h4>Database</h4>
+                        <div class="tech-items">
+                            <div class="tech-badge">PostgreSQL</div>
+                            <div class="tech-badge">Npgsql</div>
+                            <div class="tech-badge">Code-First</div>
+                        </div>
+                    </div>
+                    <div class="tech-layer">
+                        <h4>Frontend</h4>
+                        <div class="tech-items">
+                            <div class="tech-badge">Razor Views</div>
+                            <div class="tech-badge">JavaScript</div>
+                            <div class="tech-badge">DataTables</div>
+                            <div class="tech-badge">CKEditor 5</div>
+                        </div>
+                    </div>
+                    <div class="tech-layer">
+                        <h4>API & Docs</h4>
+                        <div class="tech-items">
+                            <div class="tech-badge">OpenAPI</div>
+                            <div class="tech-badge">Scalar UI</div>
+                            <div class="tech-badge">RESTful</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="architecture-diagram">
+                    <div class="arch-box client">Client (Browser)</div>
+                    <div class="arch-arrow">&#8594;</div>
+                    <div class="arch-box mvc">Quizgoroo MVC App</div>
+                    <div class="arch-arrow">&#8594;</div>
+                    <div class="arch-box api">Quizgoroo Web API</div>
+                    <div class="arch-arrow">&#8594;</div>
+                    <div class="arch-box db">PostgreSQL Database</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 12: Closing -->
+        <section class="slide" id="slide-12">
+            <div class="slide-content closing">
+                <h2 class="slide-title">Why Quizgoroo?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">&#10003;</span>
+                        <span>Complete Online Exam Solution</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">&#10003;</span>
+                        <span>Integrated Learning Management</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">&#10003;</span>
+                        <span>12 Interactive Question Types</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">&#10003;</span>
+                        <span>Comprehensive Analytics</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">&#10003;</span>
+                        <span>Multi-language Support</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">&#10003;</span>
+                        <span>Enterprise Security</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">&#10003;</span>
+                        <span>Modern Tech Stack</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">&#10003;</span>
+                        <span>Scalable Architecture</span>
+                    </div>
+                </div>
+                <div class="closing-cta">
+                    <h3>Ready to Transform Your Education?</h3>
+                    <p class="contact-info">
+                        <span>&#127760; Quizgoroo-tr.com</span>
+                        <span>&#128231; info@Quizgoroo-tr.com</span>
+                    </p>
+                </div>
+                <div class="closing-logo">
+                    <svg viewBox="0 0 100 100" class="kangaroo-icon small">
+                        <circle cx="50" cy="50" r="45" fill="#2b6cb0"/>
+                        <text x="50" y="65" text-anchor="middle" fill="white" font-size="40" font-weight="bold">K</text>
+                    </svg>
+                    <span class="logo-text">Quizgoroo</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Slide navigation
+        let currentSlide = 1;
+        const totalSlides = 12;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            if (n > totalSlides) currentSlide = 1;
+            if (n < 1) currentSlide = totalSlides;
+
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index + 1 === currentSlide) {
+                    slide.classList.add('active');
+                }
+            });
+
+            document.getElementById('currentSlide').textContent = currentSlide;
+        }
+
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+
+        // Initialize
+        document.getElementById('totalSlides').textContent = totalSlides;
+    </script>
+</body>
+</html>

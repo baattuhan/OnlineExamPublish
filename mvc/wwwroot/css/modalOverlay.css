@@ -1,0 +1,176 @@
+/***************************************************
+       *  1) SAĞDAN AÇILAN MODAL (KENAR) - OVERLAY + PANEL
+       ***************************************************/
+      /* Tam ekran overlay (gölge) */
+      .side-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0067fd6b;
+        display: flex;
+        justify-content: flex-end;
+        align-items: stretch;
+        z-index: 9999;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3sease;
+        filter: blur(-8px);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+      }
+      .side-modal-overlay.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      /* Sağdan kayan panel içi */
+      .side-panel-content {
+        background-color: #fff;
+        width: 50%; /* Yarım ekran */
+        max-width: 600px; /* Daha dar ekranlarda 600px'e kadar */
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        position: relative; /* X butonu konumlandırmak için */
+      }
+      .side-panel-content.show {
+        transform: translateX(0);
+      }
+
+      /* Başlık alanı */
+      .side-panel-header {
+        padding: 1rem;
+        background-color: #f5f5f5;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      /***************************************************
+       *  2) AŞAĞIDAN YUKARI AÇILAN MODAL (ALT) - OVERLAY + SHEET
+       ***************************************************/
+      .bottom-modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end; /* İçerik alt kısımda */
+        background-color: #fe4f0124;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+      }
+      .bottom-modal-overlay.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .bottom-sheet-content {
+        width: 100%;
+        max-height: 80%;
+        background-color: #fff;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 12px 12px 0 0;
+        transform: translateY(100%);
+        transition: transform 0.4s ease;
+        position: relative;
+      }
+      .bottom-sheet-content.show {
+        transform: translateY(0);
+      }
+      .bottom-sheet-header {
+        padding: 1rem;
+        background-color: #f5f5f5;
+        border-bottom: 1px solid #ccc;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      /***************************************************
+       *  3) ORTADAKİ MODAL OVERLAY + (NORMAL / BÜYÜK / KÜÇÜK)
+       ***************************************************/
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        background-color: #0067fd6b;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+      }
+      .modal-overlay.show {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .modal-box {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        max-height: 80%;
+        overflow-y: auto;
+        position: relative; /* X butonu için */
+        /* Hoş bir açılış efekti: */
+        transform: scale(0.9);
+        opacity: 0;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      }
+      /* Overlay show olduğunda .modal-box da animasyonla görünür olsun */
+      .modal-overlay.show .modal-box {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      /* Boyut sınıfları */
+      .modal-small {
+        width: 300px;
+      }
+      .modal-normal {
+        width: 450px;
+      }
+      .modal-large {
+        width: 650px;
+      }
+
+      /* Kapat (X) butonu */
+      .modal-close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        cursor: pointer;
+        font-size: 18px;
+      }
+
+      /***************************************************
+       *  4) ORTAK BUTON STİLİ (isteğe bağlı)
+       ***************************************************/
+      .modal-btn {
+        padding: 0.6rem 1.2rem;
+        margin: 0.5rem;
+        border: none;
+        border-radius: 4px;
+        background-color: #3498db;
+        color: #fff;
+        cursor: pointer;
+      }
+      .modal-btn:hover {
+        opacity: 0.9;
+      }
